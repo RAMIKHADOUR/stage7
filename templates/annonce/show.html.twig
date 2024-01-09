@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonce{% endblock %}
+
+{% block body %}
+    <h1>Annonce</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ annonce.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ annonce.titre }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ annonce.category }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ annonce.type }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ annonce.description }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ annonce.surface }}</td>
+            </tr>
+            <tr>
+                <th>Number_rooms</th>
+                <td>{{ annonce.numberRooms }}</td>
+            </tr>
+            <tr>
+                <th>Number_bathrooms</th>
+                <td>{{ annonce.numberBathrooms }}</td>
+            </tr>
+            <tr>
+                <th>Number_stages</th>
+                <td>{{ annonce.numberStages }}</td>
+            </tr>
+            <tr>
+                <th>Numero_stage</th>
+                <td>{{ annonce.numeroStage }}</td>
+            </tr>
+            <tr>
+                <th>Number_parkings</th>
+                <td>{{ annonce.numberParkings }}</td>
+            </tr>
+            <tr>
+                <th>Date_construire</th>
+                <td>{{ annonce.dateConstruire ? annonce.dateConstruire|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ annonce.price }}</td>
+            </tr>
+            <tr>
+                <th>Media</th>
+                <td>{{ annonce.media }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ annonce.createdAt ? annonce.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_annonce_index') }}">back to list</a>
+
+    <a href="{{ path('app_annonce_edit', {'id': annonce.id}) }}">edit</a>
+
+    {{ include('annonce/_delete_form.html.twig') }}
+{% endblock %}

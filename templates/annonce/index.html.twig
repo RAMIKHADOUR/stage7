@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonce index{% endblock %}
+
+{% block body %}
+    <h1>Annonce index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Surface</th>
+                <th>Number_rooms</th>
+                <th>Number_bathrooms</th>
+                <th>Number_stages</th>
+                <th>Numero_stage</th>
+                <th>Number_parkings</th>
+                <th>Date_construire</th>
+                <th>Price</th>
+                <th>Media</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.id }}</td>
+                <td>{{ annonce.titre }}</td>
+                <td>{{ annonce.category }}</td>
+                <td>{{ annonce.type }}</td>
+                <td>{{ annonce.description }}</td>
+                <td>{{ annonce.surface }}</td>
+                <td>{{ annonce.numberRooms }}</td>
+                <td>{{ annonce.numberBathrooms }}</td>
+                <td>{{ annonce.numberStages }}</td>
+                <td>{{ annonce.numeroStage }}</td>
+                <td>{{ annonce.numberParkings }}</td>
+                <td>{{ annonce.dateConstruire ? annonce.dateConstruire|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ annonce.price }}</td>
+                <td>{{ annonce.media }}</td>
+               
+                <td>
+                    <a href="{{ path('app_annonce_show', {'id': annonce.id}) }}">show</a>
+                    <a href="{{ path('app_annonce_edit', {'id': annonce.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_annonce_new') }}">Create new</a>
+{% endblock %}

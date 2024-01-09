@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FreeImmo-Accueil{% endblock %}
+
+{% block body %}
+<main class="mt-4" id="home">
+    <div class="position-relative overflow-hidden text-start">
+        <div class="col-md-10 p-lg-5 mx-auto my-5 mt-5">
+            <h4 class="mt-5 text-warning">Une solution rapide pour trouver une propriété idéale</h4>
+            <div class="input-group rounded mt-5">
+                <input type="search" class="form-control rounded m-2" placeholder="Search" />
+                <input type="search" class="form-control rounded m-2" placeholder="Search" />
+                <input type="search" class="form-control rounded m-2" placeholder="Search" />
+                <input type="search" class="form-control rounded m-2" placeholder="Search" />
+                <span class="form-label m-3">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+</main>
+{% endblock %}
